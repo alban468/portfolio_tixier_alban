@@ -180,6 +180,12 @@ nav{
     font-family: 'Allura', cursive;
     color: rgb(0, 0, 0);
   }
+
+  .timeline-item h4 {
+    margin-top: 10;
+    font-family: 'Allura', cursive;
+    color: rgb(0, 0, 0);
+  }
   
   .timeline-item p {
     margin: 5px 0 0 0;
