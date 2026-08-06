@@ -1,210 +1,267 @@
 body{
-    background-color: rgb(31, 27, 29) ;
-    width:100%;
-    }
-    
+  background-color: rgb(31, 27, 29) ;
+width:100%;
+  }
 nav{
-    position: sticky;
-    top: 50px; 
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 2;
-
-  }
-
-  nav ul li a {
-    transition: box-shadow 0.2s ease;
-  }
-  
-  nav ul li a.active {
-    box-shadow: inset 0 4px 6px rgba(0,0,0,0.2);
-    background-color: #555;
-    color: rgb(247, 206, 146);
-    border-radius: 30px;
-  }
-  
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-
-  li {
-    margin: 0 10px;
-    
-  }
-  
-
-  a {
-    display: block;
-    padding: 15px 120px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 30px;
-  }
-  
- 
-  li:first-child a {
-    background-color: rgb(247, 206, 146);
-    transition: background-color 0.4s ease, transform 0.4s ease;
-  }
-  
-  li:first-child a:hover {
-    background-color: rgb(233, 157, 59);
-    transform-origin: center;
-    transform: rotate(3deg);
-  }
-  
-  li:nth-child(2) a {
-    background-color: rgb(247, 206, 146);
-    transition: background-color 0.4s ease, transform 0.4s ease;
-  }
-  
-  li:nth-child(2) a:hover {
-    background-color: rgb(233, 157, 59);
-    transform-origin: center;
-    transform: rotate(3deg);
-  }
-  
-  li:nth-child(3) a {
-    background-color: rgb(247, 206, 146);
-    transition: background-color 0.4s ease, transform 0.4s ease;
-  }
-  
-  li:nth-child(3) a:hover {
-    background-color: rgb(233, 157, 59);
-    transform-origin: center;
-    transform: rotate(3deg);
-  }
-  li:nth-child(4) a {
-    background-color: rgb(247, 206, 146);
-    transition: background-color 0.4s ease, transform 0.4s ease;
-  }
-  
-  li:nth-child(4) a:hover {
-    background-color: rgb(233, 157, 59);
-    transform-origin: center;
-    transform: rotate(3deg);
-  }
-
-
-
-
+position: sticky;
+top: 50px; 
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+z-index: 2;
+}
+nav ul li a {
+transition: box-shadow 0.2s ease;
+}
+nav ul li a.active {
+box-shadow: inset 0 4px 6px rgba(0,0,0,0.2);
+background-color: #555;
+color: rgb(247, 206, 146);
+border-radius: 30px;
+}
+ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+}
+li {
+margin: 0 10px;
+}
+a {
+display: block;
+padding: 15px 120px;
+color: rgb(0, 0, 0);
+text-decoration: none;
+text-align: center;
+font-size: 18px;
+border-radius: 30px;
+}
+li:first-child a {
+background-color: rgb(247, 206, 146);
+transition: background-color 0.4s ease, transform 0.4s ease;
+}
+li:first-child a:hover {
+background-color: rgb(233, 157, 59);
+transform-origin: center;
+transform: rotate(3deg);
+}
+li:nth-child(2) a {
+background-color: rgb(247, 206, 146);
+transition: background-color 0.4s ease, transform 0.4s ease;
+}
+li:nth-child(2) a:hover {
+background-color: rgb(233, 157, 59);
+transform-origin: center;
+transform: rotate(3deg);
+}
+li:nth-child(3) a {
+background-color: rgb(247, 206, 146);
+transition: background-color 0.4s ease, transform 0.4s ease;
+}
+li:nth-child(3) a:hover {
+background-color: rgb(233, 157, 59);
+transform-origin: center;
+transform: rotate(3deg);
+}
+li:nth-child(4) a {
+background-color: rgb(247, 206, 146);
+transition: background-color 0.4s ease, transform 0.4s ease;
+}
+li:nth-child(4) a:hover {
+background-color: rgb(233, 157, 59);
+transform-origin: center;
+transform: rotate(3deg);
+}
 .galerie-container {
-  display: flex;
-  justify-content: center; 
-  align-items: flex-start;
-  margin: 80px auto; 
-  padding: 40px 60px;
-  max-width: 1200px;
-  border: 5px solid rgb(247, 206, 146);
-  border-radius: 15px;
-  gap: 50px;
-  flex-wrap: wrap;
+display: flex;
+justify-content: center; 
+align-items: flex-start;
+margin: 80px auto; 
+padding: 40px 60px;
+max-width: 1200px;
+border: 5px solid rgb(247, 206, 146);
+border-radius: 15px;
+gap: 50px;
+flex-wrap: wrap;
 }
-
-
 .grille-images {
-  display: grid;
-  grid-template-columns:  1fr 1fr ;
-  gap: 100px;
-  flex-shrink: 0;
+display: grid;
+grid-template-columns:  1fr 1fr ;
+gap: 100px;
+flex-shrink: 0;
 }
 
+/* === Option 2 : pas de scale flou au survol, juste un léger effet + l'overlay HD prend le relais (voir JS) === */
 .image-zoom {
-  width: 200px;
-  height: 150px;
-  object-fit: scale-down;
-  border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-   animation: zoomInOut 2s ease-in-out ;
+width: 200px;
+height: 150px;
+object-fit: scale-down;
+border-radius: 12px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+animation: zoomInOut 2s ease-in-out ;
 }
-
-
 .image-zoom:hover {
-  transform: scale(4);
-  z-index: 10;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
+transform: scale(1.05); /* juste un petit feedback, l'agrandissement net se fait via l'overlay */
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* === Overlay HD injecté par le JS === */
+.image-hd-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.image-hd-overlay.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  /* pointer-events reste "none" ici : sur PC on ne veut JAMAIS que l'overlay
+     soit cliquable, sinon ça interfère avec le survol (voir règle .is-touch plus bas) */
+}
+.overlay-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.overlay-backdrop.active {
+  opacity: 1;
+  /* idem : pas de pointer-events auto en mode survol PC */
+}
 
+/* === Bouton de fermeture (croix), affiché uniquement en mode tactile === */
+.overlay-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  line-height: 1;
+  color: rgb(31, 27, 29);
+  background-color: rgb(247, 206, 146);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.8);
+}
+.overlay-close-btn.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Mode tactile uniquement : ici, et seulement ici, on autorise
+   le tap sur le fond, l'image agrandie et la croix pour fermer === */
+.is-touch .overlay-backdrop.active,
+.is-touch .image-hd-overlay.active,
+.is-touch .overlay-close-btn.active {
+  pointer-events: auto;
+}
+
+.btn-projet {
+display: inline-block;
+margin-top: 20px;
+padding: 12px 35px;
+background-color: rgb(247, 206, 146);
+color: rgb(0, 0, 0);
+text-decoration: none;
+text-align: center;
+font-family: "Caveat", cursive;
+font-size: 22px;
+font-weight: 700;
+border-radius: 30px;
+transition: background-color 0.4s ease, transform 0.4s ease;
+}
+.btn-projet:hover {
+background-color: rgb(233, 157, 59);
+transform: rotate(3deg);
+}
 .texte-explicatif {
-  flex: 1;
-  min-width: 350px;
+flex: 1;
+min-width: 350px;
 }
-
 .texte-explicatif h2 {
-  font-family: "Allura", cursive;
-  font-size: 100px;
-  margin-bottom: 15px;
-  color: rgb(247, 206, 146);
+font-family: "Allura", cursive;
+font-size: clamp(50px, 8vw, 100px); /* correction : évite le débordement sur mobile */
+margin-bottom: 15px;
+color: rgb(247, 206, 146);
 }
-
 .texte-explicatif p {
-  font-family: "Caveat", cursive;
-  font-size: 25px;
-  color: white;
-  line-height: 1.8;
+font-family: "Caveat", cursive;
+font-size: 25px;
+color: white;
+line-height: 1.8;
 }
-
 @keyframes zoomInOut {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
+0%, 100% {
+transform: scale(1);
 }
-
+50% {
+transform: scale(1.3);
+}
+}
 @media (max-width: 1200px) {
-
-  nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  nav ul li {
-      width: 50%;      
-      display: flex;
-      justify-content: center;
-      margin: 5px 0;
-  }
-
-  nav ul li a {
-      padding: 10px 80px;   
-      font-size: 16px;
-      width: 100%;           
-  }
+nav ul {
+flex-wrap: wrap;
+justify-content: center;
 }
-
+nav ul li {
+width: 50%;      
+display: flex;
+justify-content: center;
+margin: 5px 0;
+}
+nav ul li a {
+padding: 10px 80px;   
+font-size: 16px;
+width: 100%;           
+}
+}
 @media (max-width: 800px) {
-
-  nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  nav ul li {
-      width: 50%;      
-      display: flex;
-      justify-content: center;
-      margin: 5px 0;
-  }
-
-  nav ul li a {
-      padding: 10px 20px;   
-      font-size: 16px;
-      width: 90%;           
-  }
+nav ul {
+flex-wrap: wrap;
+justify-content: center;
 }
-
-
+nav ul li {
+width: 50%;      
+display: flex;
+justify-content: center;
+margin: 5px 0;
+}
+nav ul li a {
+padding: 10px 20px;   
+font-size: 16px;
+width: 90%;           
+}
+/* correction : la grille passe en 1 colonne sur mobile pour éviter l'écrasement */
+.grille-images {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+/* l'overlay reste utilisable sur mobile (ouverture/fermeture au tap), on adapte juste sa taille */
+.image-hd-overlay {
+  max-width: 92vw;
+  max-height: 75vh;
+}
+}
