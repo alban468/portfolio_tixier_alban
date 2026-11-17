@@ -1,0 +1,21 @@
+/* Couleurs, polices et mesures du site : on les change ici, nulle part ailleurs. */
+:root {
+  --bg: #0d1322;
+  --surface: #131b2e;
+  --surface-2: #19233b;
+  --ink: #eef1f7;
+  --mute: #97a2b8;
+  --line: #25314b;
+  --blue: #4c86ff;        /* texte et accents sur fond sombre */
+  --blue-strong: #2f6bf0; /* fond des boutons : contraste suffisant avec le texte blanc */
+  --blue-hover: #2559d6;
+  --ok: #3ddc84;          /* réservé aux ✓ des tests */
+
+  --font: "Archivo", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius: 10px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --max: 1160px;
+  --header-h: 64px;
+}

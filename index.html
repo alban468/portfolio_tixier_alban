@@ -1,33 +1,751 @@
 <!DOCTYPE html>
-<html lang = "fr">
+<html lang="fr">
 <head>
-	<meta charset = "utf-8">
-	<title>Alban Tixier</title>
-	<link rel ="stylesheet" href ="static/Homepage.css">
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alban Tixier, développeur full stack</title>
+  <meta name="description" content="Portfolio d'Alban Tixier, étudiant en 3e année de BUT Informatique à Clermont-Ferrand. Je cherche un stage de 18 semaines en 2027.">
+  <meta name="theme-color" content="#0d1322">
+  <meta property="og:title" content="Alban Tixier, développeur full stack">
+  <meta property="og:description" content="Étudiant en BUT Informatique, je cherche un stage de 18 semaines en 2027.">
+  <meta property="og:image" content="https://alban468.github.io/portfolio_tixier_alban/images/truffeAcceuil.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1322'/%3E%3Ctext x='16' y='22.5' font-family='Arial' font-weight='800' font-size='17' text-anchor='middle' fill='%234c86ff'%3EAT%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..112,400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Le JavaScript est actif : les effets d'apparition peuvent cacher les blocs avant leur entrée -->
+  <script>document.documentElement.classList.add('js');</script>
+  <!-- three.js (violon 3D) : version figée à un seul endroit -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
 <body>
-    <nav>
-		<ul>
-            <li><a href="index.html" class="active">Acceuil</a></li>
-			<li><a href="parcours.html">Mon Parcours</a></li>
-			<li><a href="projet.html">Mes Projets</a></li>
-			<li><a href="moi.html">A propos de moi </a></li>
-		</ul>
-		</nav>
-        <div class="container">
-            <img src="images/alban.jpeg" alt="Photo de profil d'Alban" id="alban">
-            <div class="text">
-                <h1> Alban Tixier</h1>
-                <p>Bonjour, moi c'est <b>Alban</b>, </br> je cherche un <b>stage</b> du 15 février au 7 mai et du </br> 28 juin au 13 août pour ma 3e année de BUT </br>
-                    J’ai travaillé en équipe de 7 dans le cadre d’un projet </br>sur le développement d’une application web et mobile complète </br> pour gérer une agence de location de voiture . </br> J’ai pu travailler sur des WebServices, de l'android, du blazor et du php.</br> J’ai développé des compétences dans le développement, mais </br> également dans l’aspect relation en prenant le rôle de chef d'équipe . 
-                </p>
-                <div id="lien">
-                    <a href="https://www.linkedin.com/in/alban-tixier-546078351/" id="linkedin"><img src="images/linkedin.webp" alt="Photo pour premier lien" id="img1"></a>
-                    <a href="static/CV_Stage_TIXIER_Alban_2026_2027.pdf" download id="link">Téléchager mon CV</a>
-                </div>
-            </div>
+  <a class="skip" href="#projets">Aller aux projets</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">Alban <span>Tixier</span></a>
+      <button class="menu-btn" popovertarget="menu" aria-label="Ouvrir le menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav aria-label="Navigation principale">
+        <ul id="menu" class="menu" popover>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#la-pause">La pause</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn" href="static/TIXIER_Alban_CV_STAGE_2026_2027.pdf" download>Mon CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Accueil -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Alban Tixier</h1>
+        <p class="hero-role">Développeur full stack</p>
+        <p class="hero-dispo">Étudiant en 3<sup>e</sup> année de BUT Informatique à Clermont-Ferrand, je cherche un <strong>stage de 18 semaines</strong>, du <strong>15 février au 7 mai 2027</strong> puis du <strong>28 juin au 13 août 2027</strong>.</p>
+
+        <!-- Terminal : js/terminal.js tape la commande puis affiche les résultats ligne par ligne -->
+        <div class="term" data-term>
+          <div class="term-bar">
+            <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="term-title" aria-hidden="true">alban — zsh</span>
+            <button type="button" class="term-replay" aria-label="Relancer la commande">↻ Relancer</button>
+          </div>
+          <div class="term-body">
+            <p class="term-line term-cmd"><span class="dim" aria-hidden="true">$ </span><span class="term-typed">npm test alban</span><span class="caret" aria-hidden="true"></span></p>
+            <p class="term-line term-out dim" aria-hidden="true">&gt; alban@2027.0.0 test</p>
+            <p class="term-line term-spin dim" aria-hidden="true"><span class="spinner">⠋</span> exécution des tests…</p>
+            <a class="term-line term-out" href="#projet-truffe"><span class="ok" aria-hidden="true">✓</span> livre un site e-commerce seul, en production <span class="dim" aria-hidden="true">(18 ms)</span></a>
+            <a class="term-line term-out" href="#projet-rentpark"><span class="ok" aria-hidden="true">✓</span> dirige une équipe de 7 en Scrum <span class="dim" aria-hidden="true">(12 ms)</span></a>
+            <a class="term-line term-out" href="#projet-chat2test"><span class="ok" aria-hidden="true">✓</span> travaille avec des agents IA (LLM, VLM) <span class="dim" aria-hidden="true">(24 ms)</span></a>
+            <p class="term-line term-out term-sum" aria-hidden="true"><span class="ok">3 passés</span>, 0 échec <span class="dim">durée 0,42 s</span></p>
+            <p class="term-line term-out" aria-hidden="true"><span class="dim">$ </span><span class="caret"></span></p>
+          </div>
         </div>
 
+        <div class="ctas">
+          <a class="btn" href="static/TIXIER_Alban_CV_STAGE_2026_2027.pdf" download>Télécharger mon CV</a>
+          <a class="btn btn-ghost" href="#contact">Me contacter</a>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="images/alban.webp" width="700" height="934" fetchpriority="high" alt="Portrait d'Alban Tixier">
+        <figcaption class="hero-badge"><span class="pulse" aria-hidden="true"></span>Disponible pour un stage en 2027</figcaption>
+      </figure>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="section container" aria-labelledby="projets-title">
+      <h2 id="projets-title" data-reveal>Projets</h2>
+      <div class="cards">
+        <article class="card spot" id="projet-truffe" data-reveal>
+          <img src="images/truffeAcceuil.webp" width="1600" height="886" loading="lazy" alt="Page d'accueil du site Truffe And Co">
+          <div class="card-body">
+            <p class="card-role">Stage, 2026, fait seul</p>
+            <h3><button type="button" class="card-open" data-sheet="sheet-truffe">Truffe And Co</button></h3>
+            <p>Site e-commerce en production, avec caisse et stocks, paiement en ligne et livraison.</p>
+            <ul class="tags" aria-label="Technologies"><li>PHP</li><li>Twig</li><li>JavaScript</li></ul>
+          </div>
+        </article>
+
+        <article class="card spot" id="projet-chat2test" data-reveal>
+          <img class="card-logo" src="images/chat2test.webp" width="900" height="900" loading="lazy" alt="Logo de Chat2Test">
+          <div class="card-body">
+            <p class="card-role">SAE, équipe de 3, en cours</p>
+            <h3><button type="button" class="card-open" data-sheet="sheet-chat2test">Chat2Test</button></h3>
+            <p>Porter vers le mobile un outil qui génère des tests automatiques avec des agents IA.</p>
+            <ul class="tags" aria-label="Technologies"><li>TypeScript</li><li>LLM</li><li>VLM</li><li>Appium</li></ul>
+          </div>
+        </article>
+
+        <article class="card spot" id="projet-rentpark" data-reveal>
+          <img src="images/webRentPark.webp" width="1600" height="879" loading="lazy" alt="Interface web de RentPark, la flotte automobile">
+          <div class="card-body">
+            <p class="card-role">Chef d'équipe, 7 personnes</p>
+            <h3><button type="button" class="card-open" data-sheet="sheet-rentpark">RentPark</button></h3>
+            <p>Gestion de location de véhicules : site web, appli Android, administration et API REST.</p>
+            <ul class="tags" aria-label="Technologies"><li>Kotlin</li><li>Blazor</li><li>PHP</li><li>PostgreSQL</li></ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="minis">
+        <article class="mini spot" data-reveal>
+          <img src="images/OnitamaBoard.webp" width="1400" height="729" loading="lazy" alt="">
+          <div>
+            <h3><button type="button" class="card-open" data-sheet="sheet-onitama">Onitama</button></h3>
+            <p>Jeu de stratégie en .NET MAUI, équipe de 3</p>
+          </div>
+        </article>
+        <article class="mini spot" data-reveal>
+          <img src="images/Diabolo.webp" width="904" height="700" loading="lazy" alt="">
+          <div>
+            <h3><button type="button" class="card-open" data-sheet="sheet-diabolo">Diabolo IV</button></h3>
+            <p>Jeu d'aventure en Pygame et Tiled, projet perso</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="section container" aria-labelledby="competences-title">
+      <h2 id="competences-title" data-reveal>Compétences</h2>
+      <dl class="skills">
+        <div data-reveal><dt>Web</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>Twig</li></ul></dd></div>
+        <div data-reveal><dt>Frameworks</dt><dd><ul class="tags"><li>Angular</li><li>Symfony</li><li>Vue.js</li><li>Blazor</li><li>.NET MAUI</li></ul></dd></div>
+        <div data-reveal><dt>Langages</dt><dd><ul class="tags"><li>Python</li><li>Java</li><li>Kotlin</li><li>C#</li><li>C</li><li>C++</li></ul></dd></div>
+        <div data-reveal><dt>Bases de données</dt><dd><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li></ul></dd></div>
+        <div data-reveal><dt>Outils</dt><dd><ul class="tags"><li>Git</li><li>Docker</li><li>Linux</li><li>Shell</li></ul></dd></div>
+        <div data-reveal><dt>Pratiques</dt><dd><ul class="tags"><li>Agile / Scrum</li><li>CI/CD</li><li>API REST</li><li>SOLID</li></ul></dd></div>
+      </dl>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="section container" aria-labelledby="parcours-title">
+      <h2 id="parcours-title" data-reveal>Parcours</h2>
+      <ol class="tl">
+        <li class="tl-item" data-reveal>
+          <article class="tl-card spot">
+            <img class="tl-photo" src="images/truffe.webp" width="213" height="160" loading="lazy" alt="La boutique Truffe And Co">
+            <div class="tl-body">
+              <p class="tl-meta"><span class="tl-when">avril – juin 2026</span><span class="tl-kind">Expérience</span></p>
+              <h3>Développeur web stagiaire</h3>
+              <p class="tl-where">Truffe And Co, Clermont-Ferrand</p>
+              <ul class="tl-points">
+                <li>Site e-commerce conçu et développé seul, sans référent technique</li>
+                <li>Intégration d'API : caisse et stocks, paiement en ligne, livraison</li>
+                <li>Interface d'administration et optimisation des performances</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies"><li>PHP</li><li>Twig</li><li>JavaScript</li></ul>
+            </div>
+          </article>
+        </li>
+        <li class="tl-item" data-reveal>
+          <article class="tl-card spot">
+            <img class="tl-photo" src="images/cap.webp" width="240" height="160" loading="lazy" alt="La concession Cap Liberté">
+            <div class="tl-body">
+              <p class="tl-meta"><span class="tl-when">2025 – 2026</span><span class="tl-kind">Expérience</span></p>
+              <h3>Préparateur esthétique de véhicules</h3>
+              <p class="tl-where">Cap Liberté</p>
+              <p>Job d'été de juin à août 2025, puis job étudiant le samedi de novembre 2025 à juin 2026.</p>
+            </div>
+          </article>
+        </li>
+        <li class="tl-item" data-reveal>
+          <article class="tl-card spot">
+            <img class="tl-photo" src="images/iut.webp" width="800" height="474" loading="lazy" alt="L'IUT de Clermont-Ferrand">
+            <div class="tl-body">
+              <p class="tl-meta"><span class="tl-when">2024 – 2027</span><span class="tl-kind">Formation</span></p>
+              <h3>BUT Informatique</h3>
+              <p class="tl-where">IUT de Clermont-Ferrand, Université Clermont Auvergne</p>
+              <p>Développement web et mobile, WebServices, bases de données, gestion de projet en méthode agile.</p>
+            </div>
+          </article>
+        </li>
+        <li class="tl-item" data-reveal>
+          <article class="tl-card spot">
+            <img class="tl-photo" src="images/sa.webp" width="800" height="366" loading="lazy" alt="Le lycée Saint-Alyre">
+            <div class="tl-body">
+              <p class="tl-meta"><span class="tl-when">2023 – 2024</span><span class="tl-kind">Formation</span></p>
+              <h3>Baccalauréat général, spécialités Maths et NSI</h3>
+              <p class="tl-where">Lycée Saint-Alyre, Clermont-Ferrand</p>
+            </div>
+          </article>
+        </li>
+        <li class="tl-item" data-reveal>
+          <article class="tl-card spot">
+            <img class="tl-photo" src="images/aqua.webp" width="335" height="224" loading="lazy" alt="Le parc AquaLoisirs">
+            <div class="tl-body">
+              <p class="tl-meta"><span class="tl-when">été 2023</span><span class="tl-kind">Expérience</span></p>
+              <h3>Employé polyvalent</h3>
+              <p class="tl-where">AquaLoisirs</p>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- À propos -->
+    <section id="a-propos" class="section container" aria-labelledby="a-propos-title">
+      <h2 id="a-propos-title" data-reveal>À propos</h2>
+      <div class="about">
+        <div class="about-text">
+          <div data-reveal>
+            <h3>Qui suis-je ?</h3>
+            <p>Je m'appelle <strong>Alban Tixier</strong>, je suis étudiant en informatique à l'IUT de Clermont-Ferrand. Ma deuxième année m'a permis d'acquérir des connaissances en WebServices et en développement d'applications web et mobiles, et d'améliorer mon relationnel en prenant la place de chef d'équipe.</p>
+            <p>Dans mon projet de deuxième année, j'ai dû me confronter aux exigences d'un client et utiliser les méthodes agiles pour mener le projet à bien, en respectant les coûts et les délais.</p>
+          </div>
+          <ul class="tags tags-soft" aria-label="Qualités" data-reveal><li>Autonomie</li><li>Curiosité</li><li>Polyvalence</li><li>Travail d'équipe</li><li>Adaptation</li><li>Anglais professionnel</li></ul>
+
+          <h3 class="about-sub" data-reveal>Mes passions</h3>
+          <div class="passions">
+            <article class="passion spot" data-reveal>
+              <h4>L'informatique</h4>
+              <p>C'est ma plus grande passion, depuis mon plus jeune âge. J'aime tout ce qui touche de près ou de loin à l'informatique : le matériel comme le logiciel, les jeux vidéo, l'informatique embarquée. J'ai toujours été curieux de comprendre comment cela marche, et fasciné par tout ce qu'il est possible de faire avec.</p>
+            </article>
+            <article class="passion spot" data-reveal>
+              <h4>L'automobile</h4>
+              <p>Depuis mes plus jeunes années, j'ai toujours aimé les voitures. Ma curiosité m'a donné envie de comprendre comment ces pièces métalliques peuvent produire une telle puissance. Mais le plus important reste le plaisir de conduire, de ressentir des choses à travers la voiture.</p>
+            </article>
+            <article class="passion spot" data-reveal>
+              <h4>La musique et le karaté</h4>
+              <p>Je joue du violon, du piano et de la guitare, et j'ai pratiqué le karaté pendant 8 ans.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="music" aria-label="Musique">
+          <div class="violin-stage" data-reveal>
+            <canvas id="violin" aria-hidden="true"></canvas>
+            <p class="violin-fallback">Le violon 3D n'a pas pu s'afficher, mais ses cordes jouent toujours.</p>
+            <div class="strings" role="group" aria-label="Jouer une corde du violon">
+              <button type="button" data-string="0">Sol</button>
+              <button type="button" data-string="1">Ré</button>
+              <button type="button" data-string="2">La</button>
+              <button type="button" data-string="3">Mi</button>
+            </div>
+            <p class="violin-hint">Fais-le tourner, pince une corde.</p>
+          </div>
+
+          <article class="asso spot" data-reveal>
+            <img src="images/dvdlc.webp" width="100" height="100" loading="lazy" alt="Logo de Du Vent Dans les Cordes">
+            <div>
+              <h3>Du Vent Dans les Cordes</h3>
+              <p class="asso-role">Violoniste et chef de pupitre, depuis plus de 8 ans</p>
+              <p>Je suis très engagé dans cette association et j'aime les valeurs humaines qu'elle véhicule. C'est un orchestre intergénérationnel d'une cinquantaine de personnes, qui organise des concerts gratuits pour faire découvrir la musique au plus grand nombre ; j'aide d'ailleurs à leur organisation.</p>
+              <p>Cette expérience m'apporte beaucoup : la direction d'une équipe en tant que chef de pupitre, l'aide que je peux apporter aux nouveaux membres grâce à mon expérience, et toutes les valeurs acquises au fil des années.</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Coups de cœur : bandeau qui défile (js/picks.js) -->
+    <section id="coups-de-coeur" class="section picks-section" aria-labelledby="picks-title">
+      <div class="container">
+        <div class="picks-head" data-reveal>
+          <div>
+            <h2 id="picks-title">Coups de cœur</h2>
+            <p class="section-lead">Ce que j'écoute, ce que je joue au violon, les voitures qui me font rêver et les jeux qui m'ont marqué.</p>
+          </div>
+          <div class="picks-arrows">
+            <button type="button" class="picks-prev" aria-label="Défiler vers la gauche">‹</button>
+            <button type="button" class="picks-next" aria-label="Défiler vers la droite">›</button>
+          </div>
+        </div>
+        <div class="chips" role="group" aria-label="Filtrer les coups de cœur" data-reveal>
+          <button type="button" data-filter="tout" aria-pressed="true">Tout</button>
+          <button type="button" data-filter="musique" aria-pressed="false">Musique</button>
+          <button type="button" data-filter="violon" aria-pressed="false">Violon</button>
+          <button type="button" data-filter="voitures" aria-pressed="false">Voitures</button>
+          <button type="button" data-filter="jeux" aria-pressed="false">Jeux vidéo</button>
+        </div>
+      </div>
+      <ul class="picks" data-reveal>
+          <li class="pick" data-cat="musique" data-track="rammstein" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/c1/17/d1c117a9-4061-5cf8-f6af-477d9e54849c/mzaf_4313274404009823495.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/mein-herz-brennt/1440770702?i=1440771222">
+            <img src="images/picks/rammstein.webp" width="400" height="400" loading="lazy" alt="Pochette de Mutter, Rammstein">
+            <div class="pick-body">
+              <p class="pick-kind">Metal</p>
+              <h3 class="pick-title">Mein Herz brennt</h3>
+              <p class="pick-sub">Rammstein</p>
+              <button type="button" class="pick-play" data-play="rammstein">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-car" data-cat="voitures">
+            <img src="images/picks/gt3rs.webp" width="800" height="445" loading="lazy" alt="Porsche 911 GT3 RS">
+            <div class="pick-body">
+              <p class="pick-kind">Voiture de rêve</p>
+              <h3 class="pick-title">Porsche 911 GT3 RS</h3>
+              <p class="pick-sub">Flat-6 4.0 L atmosphérique, 525 ch, 9 000 tr/min</p>
+              <p class="pick-credit">Photo : <a href="https://commons.wikimedia.org/wiki/File:Porsche_992_GT3_RS_MYLE_Festival_2025_DSC_9584_(cropped).jpg" target="_blank" rel="noopener noreferrer">Alexander Migl</a>, CC BY-SA 4.0</p>
+            </div>
+          </li>
+          <li class="pick pick-violin" data-cat="violon" data-track="schindler" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/80/98/05/8098056c-86f6-4e45-2bab-3c0c6ce3cc4a/mzaf_2570251568723423971.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/schindlers-list-theme/344472774?i=344473510">
+            <div class="pick-art pick-art-violin"><svg class="pick-staff" viewBox="0 0 200 200" aria-hidden="true"><g stroke="currentColor" stroke-width="1.2" opacity=".35"><line x1="14" x2="186" y1="70" y2="70"/><line x1="14" x2="186" y1="82" y2="82"/><line x1="14" x2="186" y1="94" y2="94"/><line x1="14" x2="186" y1="106" y2="106"/><line x1="14" x2="186" y1="118" y2="118"/></g><g fill="currentColor"><ellipse cx="60" cy="100" rx="6.5" ry="5" transform="rotate(-20 60 100)"/><line x1="66" x2="66" y1="100" y2="70" stroke="currentColor" stroke-width="1.6"/><ellipse cx="88" cy="88" rx="6.5" ry="5" transform="rotate(-20 88 88)"/><line x1="94" x2="94" y1="88" y2="58" stroke="currentColor" stroke-width="1.6"/><ellipse cx="116" cy="94" rx="6.5" ry="5" transform="rotate(-20 116 94)"/><line x1="122" x2="122" y1="94" y2="64" stroke="currentColor" stroke-width="1.6"/><ellipse cx="144" cy="76" rx="6.5" ry="5" transform="rotate(-20 144 76)"/><line x1="150" x2="150" y1="76" y2="46" stroke="currentColor" stroke-width="1.6"/></g></svg><img src="images/picks/schindler.webp" width="400" height="400" loading="lazy" alt=""></div>
+            <div class="pick-body">
+              <p class="pick-kind">Au violon</p>
+              <h3 class="pick-title">La Liste de Schindler</h3>
+              <p class="pick-sub">John Williams</p>
+              <p class="pick-note">Enregistrement par Itzhak Perlman</p>
+              <button type="button" class="pick-play" data-play="schindler">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-game pick-game-eldenring" data-cat="jeux">
+            <div class="pick-art pick-art-game" aria-hidden="true"><span>Elden Ring</span></div>
+            <div class="pick-body">
+              <p class="pick-kind">Jeu vidéo</p>
+              <h3 class="pick-title">Elden Ring</h3>
+              <p class="pick-sub">FromSoftware, 2022</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="soad" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/24/d3/fd/24d3fdd8-aed3-fce8-2dbe-3b99ca0f3823/mzaf_4553659398949274371.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/lonely-day/159505870?i=159506153">
+            <img src="images/picks/soad.webp" width="400" height="400" loading="lazy" alt="Pochette de Hypnotize, System Of A Down">
+            <div class="pick-body">
+              <p class="pick-kind">Hard rock</p>
+              <h3 class="pick-title">Lonely Day</h3>
+              <p class="pick-sub">System Of A Down</p>
+              <button type="button" class="pick-play" data-play="soad">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-car" data-cat="voitures">
+            <img src="images/picks/m4.webp" width="800" height="534" loading="lazy" alt="BMW M4 Competition">
+            <div class="pick-body">
+              <p class="pick-kind">Voiture de rêve</p>
+              <h3 class="pick-title">BMW M4 Competition</h3>
+              <p class="pick-sub">6 cylindres en ligne 3.0 L biturbo, 530 ch</p>
+              <p class="pick-credit">Photo : <a href="https://commons.wikimedia.org/wiki/File:BMW_M4_(G82)_Competition_1X7A0305.jpg" target="_blank" rel="noopener noreferrer">Alexander Migl</a>, CC BY-SA 4.0</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="sleeptoken" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/37/8c/e6/378ce6fb-1ab2-52c3-c359-5c30ef4763a6/mzaf_10382539349687596342.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/take-me-back-to-eden/1669567703?i=1669570010">
+            <img src="images/picks/sleeptoken.webp" width="400" height="400" loading="lazy" alt="Pochette de Take Me Back To Eden, Sleep Token">
+            <div class="pick-body">
+              <p class="pick-kind">Hard rock</p>
+              <h3 class="pick-title">Take Me Back To Eden</h3>
+              <p class="pick-sub">Sleep Token</p>
+              <button type="button" class="pick-play" data-play="sleeptoken">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-violin" data-cat="violon" data-track="vivaldi" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/b3/3c/1db33c94-1b0a-d927-963a-42d7ee8fb8dc/mzaf_4745474430385019818.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/les-quatre-saisons-concerto-pour-violon-en-fa-mineur/1491257848?i=1491258214">
+            <div class="pick-art pick-art-violin"><svg class="pick-staff" viewBox="0 0 200 200" aria-hidden="true"><g stroke="currentColor" stroke-width="1.2" opacity=".35"><line x1="14" x2="186" y1="70" y2="70"/><line x1="14" x2="186" y1="82" y2="82"/><line x1="14" x2="186" y1="94" y2="94"/><line x1="14" x2="186" y1="106" y2="106"/><line x1="14" x2="186" y1="118" y2="118"/></g><g fill="currentColor"><ellipse cx="60" cy="100" rx="6.5" ry="5" transform="rotate(-20 60 100)"/><line x1="66" x2="66" y1="100" y2="70" stroke="currentColor" stroke-width="1.6"/><ellipse cx="88" cy="88" rx="6.5" ry="5" transform="rotate(-20 88 88)"/><line x1="94" x2="94" y1="88" y2="58" stroke="currentColor" stroke-width="1.6"/><ellipse cx="116" cy="94" rx="6.5" ry="5" transform="rotate(-20 116 94)"/><line x1="122" x2="122" y1="94" y2="64" stroke="currentColor" stroke-width="1.6"/><ellipse cx="144" cy="76" rx="6.5" ry="5" transform="rotate(-20 144 76)"/><line x1="150" x2="150" y1="76" y2="46" stroke="currentColor" stroke-width="1.6"/></g></svg><img src="images/picks/vivaldi.webp" width="400" height="400" loading="lazy" alt=""></div>
+            <div class="pick-body">
+              <p class="pick-kind">Au violon</p>
+              <h3 class="pick-title">L&#x27;Hiver</h3>
+              <p class="pick-sub">Antonio Vivaldi</p>
+              <p class="pick-note">Enregistrement par Julie Berthollet</p>
+              <button type="button" class="pick-play" data-play="vivaldi">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-game pick-game-rdr2" data-cat="jeux">
+            <div class="pick-art pick-art-game" aria-hidden="true"><span>Red Dead Redemption 2</span></div>
+            <div class="pick-body">
+              <p class="pick-kind">Jeu vidéo</p>
+              <h3 class="pick-title">Red Dead Redemption 2</h3>
+              <p class="pick-sub">Rockstar Games, 2018</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="mj" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/88/cd/46/88cd46bd-dba7-1dc2-a63b-e8c111ac4fc3/mzaf_4042555053237612653.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/beat-it/269572838?i=269573341">
+            <img src="images/picks/mj.webp" width="400" height="400" loading="lazy" alt="Pochette de Thriller, Michael Jackson">
+            <div class="pick-body">
+              <p class="pick-kind">Pop</p>
+              <h3 class="pick-title">Beat It</h3>
+              <p class="pick-sub">Michael Jackson</p>
+              <button type="button" class="pick-play" data-play="mj">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-car" data-cat="voitures">
+            <img src="images/picks/r8.webp" width="800" height="535" loading="lazy" alt="Audi R8 V10">
+            <div class="pick-body">
+              <p class="pick-kind">Voiture de rêve</p>
+              <h3 class="pick-title">Audi R8 V10</h3>
+              <p class="pick-sub">V10 5.2 L atmosphérique, jusqu&#x27;à 620 ch</p>
+              <p class="pick-credit">Photo : <a href="https://commons.wikimedia.org/wiki/File:Audi_R8_V10_RWS_MYLE_Festival_2025_DSC_9492.jpg" target="_blank" rel="noopener noreferrer">Alexander Migl</a>, CC BY-SA 4.0</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="fir" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2a/c8/63/2ac863b0-a05c-330a-61d7-429b5727dcbf/mzaf_2323198839715005903.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/god-is-a-weapon-feat-marilyn-manson/1812675239?i=1812675240">
+            <img src="images/picks/fir.webp" width="400" height="400" loading="lazy" alt="Pochette de God Is a Weapon (feat. Marilyn Manson) - Single, Falling In Reverse">
+            <div class="pick-body">
+              <p class="pick-kind">Rock</p>
+              <h3 class="pick-title">God Is a Weapon</h3>
+              <p class="pick-sub">Falling In Reverse</p>
+              <button type="button" class="pick-play" data-play="fir">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-violin" data-cat="violon" data-track="chostakovitch" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/15/8f/3a/158f3a59-fc45-7213-1443-db6598c8d713/mzaf_13643988887951718421.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/the-second-waltz-op-99a/1777239451?i=1777239452">
+            <div class="pick-art pick-art-violin"><svg class="pick-staff" viewBox="0 0 200 200" aria-hidden="true"><g stroke="currentColor" stroke-width="1.2" opacity=".35"><line x1="14" x2="186" y1="70" y2="70"/><line x1="14" x2="186" y1="82" y2="82"/><line x1="14" x2="186" y1="94" y2="94"/><line x1="14" x2="186" y1="106" y2="106"/><line x1="14" x2="186" y1="118" y2="118"/></g><g fill="currentColor"><ellipse cx="60" cy="100" rx="6.5" ry="5" transform="rotate(-20 60 100)"/><line x1="66" x2="66" y1="100" y2="70" stroke="currentColor" stroke-width="1.6"/><ellipse cx="88" cy="88" rx="6.5" ry="5" transform="rotate(-20 88 88)"/><line x1="94" x2="94" y1="88" y2="58" stroke="currentColor" stroke-width="1.6"/><ellipse cx="116" cy="94" rx="6.5" ry="5" transform="rotate(-20 116 94)"/><line x1="122" x2="122" y1="94" y2="64" stroke="currentColor" stroke-width="1.6"/><ellipse cx="144" cy="76" rx="6.5" ry="5" transform="rotate(-20 144 76)"/><line x1="150" x2="150" y1="76" y2="46" stroke="currentColor" stroke-width="1.6"/></g></svg><img src="images/picks/chostakovitch.webp" width="400" height="400" loading="lazy" alt=""></div>
+            <div class="pick-body">
+              <p class="pick-kind">Au violon</p>
+              <h3 class="pick-title">Valse n° 2</h3>
+              <p class="pick-sub">Dmitri Chostakovitch</p>
+              <p class="pick-note">Enregistrement par André Rieu</p>
+              <button type="button" class="pick-play" data-play="chostakovitch">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-game pick-game-lol" data-cat="jeux">
+            <div class="pick-art pick-art-game" aria-hidden="true"><span>League of Legends</span></div>
+            <div class="pick-body">
+              <p class="pick-kind">Jeu vidéo</p>
+              <h3 class="pick-title">League of Legends</h3>
+              <p class="pick-sub">Riot Games, 2009</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="eminem" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/02/04/010204d9-0ec4-9f71-586c-4776a579b1cb/mzaf_6978124395926668013.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/mockingbird/1425129724?i=1425131554">
+            <img src="images/picks/eminem.webp" width="400" height="400" loading="lazy" alt="Pochette de Encore (Deluxe Version), Eminem">
+            <div class="pick-body">
+              <p class="pick-kind">Hip-hop/Rap</p>
+              <h3 class="pick-title">Mockingbird</h3>
+              <p class="pick-sub">Eminem</p>
+              <button type="button" class="pick-play" data-play="eminem">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-car" data-cat="voitures">
+            <img src="images/picks/gti.webp" width="800" height="531" loading="lazy" alt="Peugeot 205 GTI">
+            <div class="pick-body">
+              <p class="pick-kind">Voiture de rêve</p>
+              <h3 class="pick-title">Peugeot 205 GTI</h3>
+              <p class="pick-sub">4 cylindres 1.9 L, 130 ch, moins d&#x27;une tonne</p>
+              <p class="pick-credit">Photo : <a href="https://commons.wikimedia.org/wiki/File:1991_Peugeot_205_GTi_1.9_(53044669037).jpg" target="_blank" rel="noopener noreferrer">Rutger van der Maar</a>, CC BY 2.0</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="badomens" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/10/aa/2f/10aa2f62-7788-2a5e-2475-28b19fca071f/mzaf_1788910135855755535.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/dying-to-love/1846478462?i=1846478463">
+            <img src="images/picks/badomens.webp" width="400" height="400" loading="lazy" alt="Pochette de Dying To Love - Single, Bad Omens">
+            <div class="pick-body">
+              <p class="pick-kind">Metal</p>
+              <h3 class="pick-title">Dying To Love</h3>
+              <p class="pick-sub">Bad Omens</p>
+              <button type="button" class="pick-play" data-play="badomens">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-violin" data-cat="violon" data-track="campanella" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/75/33/1b/75331b9d-0549-6c5e-9158-86ffbb2c9708/mzaf_4791538340135769156.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/la-campanella/1442435989?i=1442436230">
+            <div class="pick-art pick-art-violin"><svg class="pick-staff" viewBox="0 0 200 200" aria-hidden="true"><g stroke="currentColor" stroke-width="1.2" opacity=".35"><line x1="14" x2="186" y1="70" y2="70"/><line x1="14" x2="186" y1="82" y2="82"/><line x1="14" x2="186" y1="94" y2="94"/><line x1="14" x2="186" y1="106" y2="106"/><line x1="14" x2="186" y1="118" y2="118"/></g><g fill="currentColor"><ellipse cx="60" cy="100" rx="6.5" ry="5" transform="rotate(-20 60 100)"/><line x1="66" x2="66" y1="100" y2="70" stroke="currentColor" stroke-width="1.6"/><ellipse cx="88" cy="88" rx="6.5" ry="5" transform="rotate(-20 88 88)"/><line x1="94" x2="94" y1="88" y2="58" stroke="currentColor" stroke-width="1.6"/><ellipse cx="116" cy="94" rx="6.5" ry="5" transform="rotate(-20 116 94)"/><line x1="122" x2="122" y1="94" y2="64" stroke="currentColor" stroke-width="1.6"/><ellipse cx="144" cy="76" rx="6.5" ry="5" transform="rotate(-20 144 76)"/><line x1="150" x2="150" y1="76" y2="46" stroke="currentColor" stroke-width="1.6"/></g></svg><img src="images/picks/campanella.webp" width="400" height="400" loading="lazy" alt=""></div>
+            <div class="pick-body">
+              <p class="pick-kind">Au violon</p>
+              <h3 class="pick-title">La Campanella</h3>
+              <p class="pick-sub">Niccolò Paganini</p>
+              <p class="pick-note">Enregistrement par David Garrett</p>
+              <button type="button" class="pick-play" data-play="campanella">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick pick-game pick-game-gta6" data-cat="jeux">
+            <div class="pick-art pick-art-game" aria-hidden="true"><span>GTA VI</span></div>
+            <div class="pick-body">
+              <p class="pick-kind">Jeu vidéo</p>
+              <h3 class="pick-title">GTA VI</h3>
+              <p class="pick-sub">Rockstar Games</p>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="josman" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/9a/bd/2f9abdb8-8cc9-fffd-94ae-7c92d53cb6f7/mzaf_15795890457266576890.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/intro/1611396820?i=1611396823">
+            <img src="images/picks/josman.webp" width="400" height="400" loading="lazy" alt="Pochette de M.A.N (Black Roses &amp; Lost Feelings), Josman">
+            <div class="pick-body">
+              <p class="pick-kind">Hip-hop/Rap</p>
+              <h3 class="pick-title">Intro</h3>
+              <p class="pick-sub">Josman</p>
+              <button type="button" class="pick-play" data-play="josman">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+          <li class="pick" data-cat="musique" data-track="cabrel" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/70/d5/b370d571-cef4-a2ed-349f-e6a075198f94/mzaf_11683070719241899847.plus.aac.p.m4a" data-url="https://music.apple.com/fr/album/je-laime-%C3%A0-mourir-remastered/731425532?i=731425536">
+            <img src="images/picks/cabrel.webp" width="400" height="400" loading="lazy" alt="Pochette de Les chemins de traverse (Remastered), Francis Cabrel">
+            <div class="pick-body">
+              <p class="pick-kind">Variété française</p>
+              <h3 class="pick-title">Je l&#x27;aime à mourir</h3>
+              <p class="pick-sub">Francis Cabrel</p>
+              <button type="button" class="pick-play" data-play="cabrel">▶ Écouter sur la platine</button>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+    <!-- La pause : un jeu par onglet (js/playground.js et js/games/) -->
+    <section id="la-pause" class="section container" aria-labelledby="pause-title">
+      <h2 id="pause-title" data-reveal>La pause</h2>
+      <p class="section-lead" data-reveal>Quelques petits jeux autour de mes deux passions, la musique et la voiture.</p>
+      <div class="playground" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Petits jeux">
+          <button type="button" role="tab" id="tab-vinyle" aria-controls="panel-vinyle" aria-selected="true" data-game="vinyle">Vinyle</button>
+          <button type="button" role="tab" id="tab-piano" aria-controls="panel-piano" aria-selected="false" tabindex="-1" data-game="piano">Piano</button>
+          <button type="button" role="tab" id="tab-note" aria-controls="panel-note" aria-selected="false" tabindex="-1" data-game="note">Devine la note</button>
+          <button type="button" role="tab" id="tab-f1" aria-controls="panel-f1" aria-selected="false" tabindex="-1" data-game="f1">Feux F1</button>
+          <button type="button" role="tab" id="tab-drift" aria-controls="panel-drift" aria-selected="false" tabindex="-1" data-game="drift">Mini-drift</button>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-vinyle" aria-labelledby="tab-vinyle" tabindex="0"><p class="game-loading">Chargement de la platine…</p></div>
+        <div class="tab-panel" role="tabpanel" id="panel-piano" aria-labelledby="tab-piano" tabindex="0" hidden></div>
+        <div class="tab-panel" role="tabpanel" id="panel-note" aria-labelledby="tab-note" tabindex="0" hidden></div>
+        <div class="tab-panel" role="tabpanel" id="panel-f1" aria-labelledby="tab-f1" tabindex="0" hidden></div>
+        <div class="tab-panel" role="tabpanel" id="panel-drift" aria-labelledby="tab-drift" tabindex="0" hidden></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" data-reveal>Un stage à me proposer ?</h2>
+      <p data-reveal>Écrivez-moi, je réponds rapidement.</p>
+      <p class="contact-meta" data-reveal>Basé à Clermont-Ferrand, permis B et
+        <button type="button" class="drift" aria-label="véhiculé (relancer la petite voiture)">véhiculé<span class="skid" aria-hidden="true"></span><span class="car" aria-hidden="true"><svg viewBox="0 0 40 20" width="40" height="20"><rect x="7" y="0.5" width="7" height="3" rx="1" fill="#05070c"/><rect x="27" y="0.5" width="7" height="3" rx="1" fill="#05070c"/><rect x="7" y="16.5" width="7" height="3" rx="1" fill="#05070c"/><rect x="27" y="16.5" width="7" height="3" rx="1" fill="#05070c"/><rect x="2" y="2.5" width="36" height="15" rx="5" fill="#4c86ff"/><rect x="11" y="5" width="11" height="10" rx="2" fill="#2f6bf0"/><path d="M24 4.5h4.5q3 0 3 3v5q0 3-3 3H24z" fill="#0d1322" opacity=".8"/><rect x="6.5" y="5.5" width="3" height="9" rx="1" fill="#0d1322" opacity=".6"/><rect x="36" y="4" width="2" height="3" rx="1" fill="#fff3c4"/><rect x="36" y="13" width="2" height="3" rx="1" fill="#fff3c4"/><rect x="2" y="4" width="1.5" height="3" fill="#ff5d5d"/><rect x="2" y="13" width="1.5" height="3" fill="#ff5d5d"/></svg></span><span class="smoke" aria-hidden="true"><i></i><i></i><i></i></span></button>.
+      </p>
+      <div class="contact-links" data-reveal>
+        <a class="btn" href="mailto:alban.tixier@etu.uca.fr">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          alban.tixier@etu.uca.fr
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/alban-tixier-546078351/" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.63V21h-4z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/alban468" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="static/TIXIER_Alban_CV_STAGE_2026_2027.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger mon CV
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>Alban Tixier</p>
+  </footer>
+
+  <!-- Fiches projets : ouvertes par les boutons data-sheet -->
+  <dialog class="sheet" id="sheet-truffe" aria-labelledby="sheet-truffe-title">
+    <div class="sheet-inner">
+      <header class="sheet-head">
+        <div>
+          <p class="card-role">Stage de 2<sup>e</sup> année, avril – juin 2026</p>
+          <h2 id="sheet-truffe-title" tabindex="-1" autofocus>Truffe And Co</h2>
+        </div>
+        <button type="button" class="sheet-close" aria-label="Fermer la fiche">✕</button>
+      </header>
+      <div class="gallery" role="region" aria-label="Captures du site Truffe And Co">
+        <div class="gallery-track" tabindex="0">
+          <img src="images/truffeAcceuil.webp" width="1600" height="886" loading="lazy" alt="Page d'accueil">
+          <img src="images/truffeBoutique.webp" width="1600" height="886" loading="lazy" alt="Boutique en ligne">
+          <img src="images/truffeDogWash.webp" width="1600" height="886" loading="lazy" alt="Réservation du dog wash">
+          <img src="images/truffeRelais.webp" width="1600" height="886" loading="lazy" alt="Choix du point relais pour la livraison">
+          <img src="images/truffeTeam.webp" width="1600" height="886" loading="lazy" alt="Présentation de l'équipe">
+          <img src="images/truffeAdmin.webp" width="1600" height="886" loading="lazy" alt="Interface d'administration">
+        </div>
+        <div class="gallery-nav">
+          <button type="button" class="gallery-prev" aria-label="Capture précédente">‹</button>
+          <span class="gallery-count" aria-live="polite">1 / 6</span>
+          <button type="button" class="gallery-next" aria-label="Capture suivante">›</button>
+        </div>
+      </div>
+      <div class="sheet-body">
+        <section>
+          <h3>Le contexte</h3>
+          <p>Truffe And Co, une boutique pour animaux de Clermont-Ferrand, avait besoin d'un site pour vendre en ligne et faire réserver son espace dog wash. J'ai conçu et développé le site seul, sans référent technique.</p>
+        </section>
+        <section>
+          <h3>Ce que j'ai fait</h3>
+          <ul>
+            <li>Développement complet du site en PHP, Twig et JavaScript.</li>
+            <li>Synchronisation des produits et des stocks avec le logiciel de caisse Hiboutik.</li>
+            <li>Paiement en ligne avec Up2Pay, livraison et points relais avec Boxtal.</li>
+            <li>Réservation de créneaux pour le dog wash avec Calendly.</li>
+            <li>Interface d'administration et optimisation des performances.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Ce que j'en retiens</h3>
+          <p>Seul face aux problèmes techniques, j'ai appris à chercher, à trancher et à avancer, tout en répondant aux exigences de ma tutrice et aux besoins réels de son entreprise.</p>
+        </section>
+        <ul class="tags" aria-label="Technologies"><li>PHP</li><li>Twig</li><li>JavaScript</li><li>Hiboutik</li><li>Up2Pay</li><li>Boxtal</li><li>Calendly</li></ul>
+        <a class="btn" href="https://truffeandco.fr" target="_blank" rel="noopener noreferrer">Voir le site en ligne</a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-chat2test" aria-labelledby="sheet-chat2test-title">
+    <div class="sheet-inner">
+      <header class="sheet-head">
+        <div>
+          <p class="card-role">SAE de 3<sup>e</sup> année, équipe de 3, en cours</p>
+          <h2 id="sheet-chat2test-title" tabindex="-1" autofocus>Chat2Test</h2>
+        </div>
+        <button type="button" class="sheet-close" aria-label="Fermer la fiche">✕</button>
+      </header>
+      <div class="gallery gallery-logo">
+        <div class="gallery-track">
+          <img src="images/chat2test.webp" width="900" height="900" loading="lazy" alt="Logo de Chat2Test">
+        </div>
+      </div>
+      <div class="sheet-body">
+        <section>
+          <h3>Le point de départ</h3>
+          <p>Un outil de recherche génère automatiquement des tests pour des sites web. À partir des écrans d'une application, des agents IA (LLM et VLM) repèrent les éléments de l'interface, construisent des scénarios de test en langage naturel, puis produisent le code qui les exécute.</p>
+        </section>
+        <section>
+          <h3>Le projet</h3>
+          <p>Porter cet outil vers les applications mobiles Android : partir des écrans du jeu de données Rico et générer des tests exécutables avec Appium, en TypeScript. Le projet est mené à trois, dans le cadre de notre SAE de 3<sup>e</sup> année.</p>
+        </section>
+        <ul class="tags" aria-label="Technologies"><li>TypeScript</li><li>LLM</li><li>VLM</li><li>Appium</li><li>Android</li></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-rentpark" aria-labelledby="sheet-rentpark-title">
+    <div class="sheet-inner">
+      <header class="sheet-head">
+        <div>
+          <p class="card-role">SAE de 2<sup>e</sup> année, équipe de 7, chef d'équipe</p>
+          <h2 id="sheet-rentpark-title" tabindex="-1" autofocus>RentPark</h2>
+        </div>
+        <button type="button" class="sheet-close" aria-label="Fermer la fiche">✕</button>
+      </header>
+      <div class="gallery" role="region" aria-label="Captures de RentPark">
+        <div class="gallery-track" tabindex="0">
+          <img src="images/webRentPark.webp" width="1600" height="879" loading="lazy" alt="Site web : la flotte automobile">
+          <img src="images/webRentParkPlanning.webp" width="1600" height="885" loading="lazy" alt="Site web : le planning des locations">
+          <img src="images/webRentParkClient.webp" width="1600" height="885" loading="lazy" alt="Site web : la fiche client">
+          <img src="images/androidRentPark.webp" width="600" height="1296" loading="lazy" alt="Application Android : accueil">
+          <img src="images/androidRentParkContrats.webp" width="600" height="1319" loading="lazy" alt="Application Android : les contrats">
+          <img src="images/menuMobile.webp" width="600" height="1303" loading="lazy" alt="Application Android : le menu">
+        </div>
+        <div class="gallery-nav">
+          <button type="button" class="gallery-prev" aria-label="Capture précédente">‹</button>
+          <span class="gallery-count" aria-live="polite">1 / 6</span>
+          <button type="button" class="gallery-next" aria-label="Capture suivante">›</button>
+        </div>
+      </div>
+      <div class="sheet-body">
+        <section>
+          <h3>Le contexte</h3>
+          <p>Un système complet de gestion pour une agence de location de voitures, réalisé pour un client avec la méthode Scrum.</p>
+        </section>
+        <section>
+          <h3>Ce que nous avons fait</h3>
+          <ul>
+            <li>Une application Android en Kotlin et un site client en PHP et Twig.</li>
+            <li>Une partie administration en Blazor.</li>
+            <li>Des WebServices (API REST) qui relient toutes les parties à la base PostgreSQL.</li>
+            <li>De l'intégration continue, et un code organisé selon les principes SOLID et des patrons de conception.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Ce que j'en retiens</h3>
+          <p>En tant que chef d'équipe, j'ai appris à répartir le travail, à m'adapter à chacun et à tenir le cap face aux retours du client, en respectant les coûts et les délais.</p>
+        </section>
+        <ul class="tags" aria-label="Technologies"><li>Kotlin</li><li>PHP</li><li>Twig</li><li>Blazor</li><li>API REST</li><li>PostgreSQL</li><li>CI/CD</li><li>Scrum</li></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-onitama" aria-labelledby="sheet-onitama-title">
+    <div class="sheet-inner">
+      <header class="sheet-head">
+        <div>
+          <p class="card-role">Projet d'équipe, 3 personnes</p>
+          <h2 id="sheet-onitama-title" tabindex="-1" autofocus>Onitama</h2>
+        </div>
+        <button type="button" class="sheet-close" aria-label="Fermer la fiche">✕</button>
+      </header>
+      <div class="gallery" role="region" aria-label="Captures d'Onitama">
+        <div class="gallery-track" tabindex="0">
+          <img src="images/OnitamaBoard.webp" width="1400" height="729" loading="lazy" alt="Le plateau de jeu">
+          <img src="images/OnitamaHomePage.webp" width="1400" height="733" loading="lazy" alt="L'écran d'accueil">
+          <img src="images/OnitamaCreatePage.webp" width="1400" height="729" loading="lazy" alt="La création d'une partie">
+          <img src="images/OnitamaSelectPage.webp" width="1400" height="729" loading="lazy" alt="La sélection des joueurs">
+          <img src="images/OnitamaScore.webp" width="1400" height="732" loading="lazy" alt="Le tableau des scores">
+          <img src="images/OnitamaVictoryPage.webp" width="1400" height="734" loading="lazy" alt="L'écran de victoire">
+        </div>
+        <div class="gallery-nav">
+          <button type="button" class="gallery-prev" aria-label="Capture précédente">‹</button>
+          <span class="gallery-count" aria-live="polite">1 / 6</span>
+          <button type="button" class="gallery-next" aria-label="Capture suivante">›</button>
+        </div>
+      </div>
+      <div class="sheet-body">
+        <section>
+          <h3>Le projet</h3>
+          <p>Un jeu de stratégie inspiré des échecs, développé avec .NET MAUI sous .NET 9.</p>
+        </section>
+        <section>
+          <h3>Ce que j'ai appris</h3>
+          <ul>
+            <li>Développer une application en C# et XAML.</li>
+            <li>Concevoir une persistance pour enregistrer et gérer les données.</li>
+            <li>Encapsuler le code pour le rendre plus sûr et plus facile à maintenir.</li>
+            <li>Planifier le projet et respecter les délais en équipe.</li>
+          </ul>
+        </section>
+        <ul class="tags" aria-label="Technologies"><li>C#</li><li>XAML</li><li>.NET MAUI</li></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-diabolo" aria-labelledby="sheet-diabolo-title">
+    <div class="sheet-inner">
+      <header class="sheet-head">
+        <div>
+          <p class="card-role">Projet personnel</p>
+          <h2 id="sheet-diabolo-title" tabindex="-1" autofocus>Diabolo IV</h2>
+        </div>
+        <button type="button" class="sheet-close" aria-label="Fermer la fiche">✕</button>
+      </header>
+      <div class="gallery" role="region" aria-label="Captures de Diabolo IV">
+        <div class="gallery-track" tabindex="0">
+          <img src="images/Diabolo.webp" width="904" height="700" loading="lazy" alt="Le début de l'aventure">
+          <img src="images/DiaboloLab.webp" width="904" height="699" loading="lazy" alt="Le labyrinthe aux murs cachés">
+          <img src="images/DiaboloVolc.webp" width="907" height="644" loading="lazy" alt="La zone volcanique">
+          <img src="images/DiaboloDesert.webp" width="903" height="703" loading="lazy" alt="Le désert de sable infini">
+          <img src="images/DiaboloMap.webp" width="1253" height="1230" loading="lazy" alt="La carte complète, créée avec Tiled">
+        </div>
+        <div class="gallery-nav">
+          <button type="button" class="gallery-prev" aria-label="Capture précédente">‹</button>
+          <span class="gallery-count" aria-live="polite">1 / 5</span>
+          <button type="button" class="gallery-next" aria-label="Capture suivante">›</button>
+        </div>
+      </div>
+      <div class="sheet-body">
+        <section>
+          <h3>Le projet</h3>
+          <p>Mon premier projet personnel : un petit jeu d'aventure, clin d'œil à Diablo IV. Il faut ramasser tous les diabolos de la carte, puis s'échapper à travers des labyrinthes, entre murs cachés et désert de sable infini.</p>
+        </section>
+        <section>
+          <h3>Ce que j'ai appris</h3>
+          <p>Créer des cartes avec Tiled et les intégrer au jeu en programmation orientée objet, et me lancer seul dans un projet par curiosité.</p>
+        </section>
+        <ul class="tags" aria-label="Technologies"><li>Python</li><li>Pygame</li><li>Tiled</li></ul>
+      </div>
+    </div>
+  </dialog>
 </body>
+</html>
