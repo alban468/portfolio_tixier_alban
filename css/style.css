@@ -512,8 +512,9 @@ a.term-line:hover { background: var(--surface-2); padding-left: 14px; }
 .pick-staff { position: absolute; inset: 0; width: 100%; height: 100%; }
 .pick-art-violin img { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 64px; border-radius: 50%; border: 3px solid #0b0e16; box-shadow: 0 0 0 1px #ffffff22; }
 /* jeux vidéo : jaquettes typographiques aux couleurs de chaque univers */
-.pick-art-game { display: flex; align-items: end; padding: 18px; }
-.pick-art-game span { font-weight: 800; font-stretch: 112%; font-size: 30px; line-height: .95; letter-spacing: -.01em; }
+.pick-art-game { display: flex; align-items: center; justify-content: center; padding: 22px; }
+.pick-art-game img { width: 100%; max-height: 70%; object-fit: contain; filter: drop-shadow(0 6px 14px #000a); transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+@media (prefers-reduced-motion: no-preference) { .pick-game:hover .pick-art-game img { transform: scale(1.06); } }
 .pick-game-eldenring .pick-art-game { background: radial-gradient(90% 70% at 50% 25%, #6b5521, #120e07 75%); color: #ecd18a; }
 .pick-game-rdr2 .pick-art-game { background: linear-gradient(170deg, #8c1b13, #2a0806 80%); color: #f3e7d1; }
 .pick-game-lol .pick-art-game { background: radial-gradient(100% 80% at 70% 20%, #1c4d78, #08111f 75%); color: #d7b46a; }
